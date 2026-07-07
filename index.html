@@ -22,6 +22,8 @@
       --green:       #2D6B25;
       --green-neon:  #3DA834;
       --green-dim:   rgba(45,107,37,0.12);
+      --green-glow:  rgba(61,168,52,0.40);
+      --border-green: rgba(61,168,52,0.28);
       --text:        #F0EBE0;
       --text-muted:  rgba(240,235,224,0.52);
       --border:      rgba(240,235,224,0.06);
@@ -39,7 +41,7 @@
       background: var(--bg);
       color: var(--text);
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 18px;
+      font-size: 20px;
       line-height: 1.7;
       cursor: none;
     }
@@ -72,7 +74,7 @@
     .nav-links { display: flex; gap: 40px; list-style: none; }
     .nav-links a {
       text-decoration: none; color: var(--text);
-      font-family: 'Lato', sans-serif; font-size: 11px;
+      font-family: 'Lato', sans-serif; font-size: 13px;
       letter-spacing: .2em; text-transform: uppercase;
       opacity: .65; position: relative;
       transition: opacity .2s ease, color .2s ease;
@@ -86,7 +88,7 @@
     .nav-links a:hover { opacity: 1; color: var(--pink); }
     .nav-links a:hover::after { transform: scaleX(1); }
     .nav-cta {
-      font-family: 'Lato', sans-serif; font-size: 11px;
+      font-family: 'Lato', sans-serif; font-size: 13px;
       letter-spacing: .18em; text-transform: uppercase;
       color: #fff; text-decoration: none;
       background: var(--pink);
@@ -128,7 +130,7 @@
       text-align: center; display: flex; flex-direction: column; align-items: center;
     }
     .hero-eyebrow {
-      font-family: 'Lato', sans-serif; font-size: 11px;
+      font-family: 'Lato', sans-serif; font-size: 13px;
       letter-spacing: .32em; text-transform: uppercase;
       color: var(--gold); opacity: .9; margin-bottom: 22px;
     }
@@ -151,7 +153,7 @@
     .hero-sub-row { display: flex; align-items: center; gap: 18px; margin-top: 30px; }
     .hero-sub-bar { height: 1px; width: 60px; background: rgba(240,235,224,.18); }
     .hero-sub {
-      font-family: 'Lato', sans-serif; font-size: 11px;
+      font-family: 'Lato', sans-serif; font-size: 13px;
       letter-spacing: .28em; text-transform: uppercase;
       color: var(--gold); opacity: .9;
     }
@@ -160,7 +162,7 @@
       z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 10px;
     }
     .hero-scroll span {
-      font-family: 'Lato', sans-serif; font-size: 10px;
+      font-family: 'Lato', sans-serif; font-size: 12px;
       letter-spacing: .24em; text-transform: uppercase; opacity: .35;
     }
     .scroll-line {
@@ -196,13 +198,17 @@
     .feat-icon.p svg { stroke: var(--pink); }
     .feat-icon.g svg { stroke: var(--gold); }
     .feat-icon.gr svg { stroke: var(--green-neon); }
+    .feat:has(.feat-icon.gr):hover { border-color: var(--border-green); background: var(--green-dim); }
     .feat-name {
-      font-family: 'Lato', sans-serif; font-size: 10.5px;
+      font-family: 'Lato', sans-serif; font-size: 13px;
       letter-spacing: .22em; text-transform: uppercase; opacity: .8;
     }
-    .feat-note { font-style: italic; font-size: 13.5px; color: var(--text-muted); }
+    .feat-note { font-style: italic; font-size: 15.5px; color: var(--text-muted); }
 
     /* ── ABOUT ── */
+    #about, #gallery, #events, #reserve, #contact {
+      scroll-margin-top: 90px;
+    }
     .about {
       padding: var(--spacer) 52px;
     }
@@ -211,7 +217,7 @@
       display: grid; grid-template-columns: 1fr 1fr; gap: 96px; align-items: center;
     }
     .lbl {
-      font-family: 'Lato', sans-serif; font-size: 10.5px;
+      font-family: 'Lato', sans-serif; font-size: 13px;
       letter-spacing: .28em; text-transform: uppercase;
       display: block; margin-bottom: 18px;
     }
@@ -221,7 +227,7 @@
     }
     .about-grid h2 em { color: var(--gold); font-style: italic; }
     .about-grid p {
-      font-family: 'Lato', sans-serif; font-size: 15px;
+      font-family: 'Lato', sans-serif; font-size: 17px;
       line-height: 1.88; color: var(--text-muted); margin-bottom: 14px; max-width: 460px;
     }
     .about-grid p em { color: var(--text); font-style: italic; }
@@ -257,7 +263,7 @@
       font-size: clamp(28px, 3vw, 48px); font-weight: 400;
       letter-spacing: -.022em; line-height: 1.1;
     }
-    .gallery-hd h2 em { color: var(--pink); font-style: italic; }
+    .gallery-hd h2 em { color: var(--green-neon); font-style: italic; text-shadow: 0 0 32px var(--green-glow); }
     .gallery-grid {
       max-width: 1380px; margin: 0 auto;
       display: grid;
@@ -280,7 +286,7 @@
     }
     .gal-label {
       position: absolute; bottom: 16px; left: 20px; z-index: 2;
-      font-family: 'Lato', sans-serif; font-size: 10px;
+      font-family: 'Lato', sans-serif; font-size: 12px;
       letter-spacing: .22em; text-transform: uppercase;
       color: var(--gold); opacity: .9;
     }
@@ -299,7 +305,7 @@
     }
     .bar-grid h2 em { color: var(--gold); font-style: italic; }
     .bar-grid p {
-      font-family: 'Lato', sans-serif; font-size: 15px;
+      font-family: 'Lato', sans-serif; font-size: 17px;
       line-height: 1.88; color: var(--text-muted); margin-bottom: 14px;
     }
     .specials { margin-top: 34px; display: flex; flex-direction: column; gap: 12px; }
@@ -318,11 +324,11 @@
     .special-price.pink { color: var(--pink); text-shadow: 0 0 20px var(--pink-glow); }
     .special-price.gold { color: var(--gold); text-shadow: 0 0 20px var(--gold-glow); }
     .special-info-name {
-      font-family: 'Lato', sans-serif; font-size: 11px;
+      font-family: 'Lato', sans-serif; font-size: 13px;
       letter-spacing: .18em; text-transform: uppercase; margin-bottom: 3px;
     }
     .special-info-detail {
-      font-family: 'Lato', sans-serif; font-size: 12px; color: var(--text-muted);
+      font-family: 'Lato', sans-serif; font-size: 14px; color: var(--text-muted);
     }
 
     /* ── FULL BLEED ── */
@@ -347,7 +353,7 @@
       font-style: italic; letter-spacing: -.025em; line-height: 1.08;
     }
     .full-bleed-txt h3 strong { color: var(--pink); font-style: normal; text-shadow: 0 0 48px var(--pink-glow); }
-    .full-bleed-txt h3 span  { color: var(--gold); }
+    .full-bleed-txt h3 span  { color: var(--green-neon); text-shadow: 0 0 40px var(--green-glow); }
 
     /* ── EVENTS ── */
     .events {
@@ -384,7 +390,7 @@
     .ev-card:hover .ev-border { border-color: var(--border-pink); }
     .ev-content { position: absolute; bottom: 0; left: 0; right: 0; padding: 36px; z-index: 2; }
     .ev-tag {
-      font-family: 'Lato', sans-serif; font-size: 10px;
+      font-family: 'Lato', sans-serif; font-size: 13px;
       letter-spacing: .26em; text-transform: uppercase;
       color: var(--gold); margin-bottom: 8px; display: block;
     }
@@ -393,7 +399,7 @@
       margin-bottom: 8px;
     }
     .ev-title em { color: var(--pink); font-style: italic; }
-    .ev-detail { font-family: 'Lato', sans-serif; font-size: 12px; color: var(--text-muted); }
+    .ev-detail { font-family: 'Lato', sans-serif; font-size: 14px; color: var(--text-muted); }
 
     /* ── RESERVATION ── */
     .reservation {
@@ -417,7 +423,7 @@
     .reservation h2 em { color: var(--pink); font-style: italic; text-shadow: 0 0 64px var(--pink-glow); }
     .res-meta {
       display: flex; justify-content: center; gap: 52px; margin-bottom: 52px;
-      font-family: 'Lato', sans-serif; font-size: 12px;
+      font-family: 'Lato', sans-serif; font-size: 15px;
       letter-spacing: .12em; text-transform: uppercase;
       color: var(--text-muted);
       position: relative; z-index: 1;
@@ -429,7 +435,7 @@
     }
     .btn-cta {
       display: inline-block;
-      font-family: 'Lato', sans-serif; font-size: 11px;
+      font-family: 'Lato', sans-serif; font-size: 14px;
       letter-spacing: .22em; text-transform: uppercase;
       color: #fff; background: var(--pink);
       padding: 20px 58px; text-decoration: none;
@@ -454,7 +460,7 @@
       align-items: start; gap: 48px;
     }
     .footer-info {
-      font-family: 'Lato', sans-serif; font-size: 12px;
+      font-family: 'Lato', sans-serif; font-size: 14px;
       letter-spacing: .1em; text-transform: uppercase;
       color: var(--text-muted); line-height: 2.1;
     }
@@ -467,14 +473,14 @@
     }
     .footer-nav { display: flex; gap: 26px; }
     .footer-nav a {
-      font-family: 'Lato', sans-serif; font-size: 10.5px;
+      font-family: 'Lato', sans-serif; font-size: 13px;
       letter-spacing: .16em; text-transform: uppercase;
       color: var(--text); text-decoration: none; opacity: .28;
       transition: opacity .2s ease, color .2s ease;
     }
     .footer-nav a:hover { opacity: 1; color: var(--pink); }
     .footer-hours {
-      font-family: 'Lato', sans-serif; font-size: 12px;
+      font-family: 'Lato', sans-serif; font-size: 14px;
       letter-spacing: .1em; text-transform: uppercase;
       color: var(--text-muted); line-height: 2.1; text-align: right;
     }
@@ -485,7 +491,7 @@
     }
     .footer-copy {
       text-align: center; margin-top: 28px;
-      font-family: 'Lato', sans-serif; font-size: 10.5px;
+      font-family: 'Lato', sans-serif; font-size: 12.5px;
       letter-spacing: .1em; text-transform: uppercase; opacity: .18;
     }
 
@@ -621,7 +627,7 @@
 <section id="gallery" class="gallery">
   <div class="gallery-hd">
     <div>
-      <span class="lbl" style="color: var(--gold)">From Our Kitchen</span>
+      <span class="lbl" style="color: var(--green-neon)">From Our Kitchen</span>
       <h2>Fresh. Bold. <em>Authentic.</em></h2>
     </div>
   </div>
@@ -636,7 +642,7 @@
     </div>
     <div class="gal-item">
       <img src="IMG_3192.jpeg" alt="Fish tacos">
-      <span class="gal-label">Fish Tacos</span>
+      <span class="gal-label" style="color: var(--green-neon);">Fish Tacos</span>
     </div>
     <div class="gal-item">
       <img src="IMG_3193.jpeg" alt="Chicken wings">
@@ -644,7 +650,7 @@
     </div>
     <div class="gal-item">
       <img src="IMG_3194.jpeg" alt="Fresh Menudo">
-      <span class="gal-label">Menudo · Made Fresh Daily</span>
+      <span class="gal-label" style="color: var(--green-neon);">Menudo · Made Fresh Daily</span>
     </div>
   </div>
 </section>
@@ -693,7 +699,7 @@
 <!-- EVENTS -->
 <section id="events" class="events">
   <div class="events-hd">
-    <span class="lbl" style="color: var(--pink); display:block; margin-bottom:14px;">What's On</span>
+    <span class="lbl" style="color: var(--green-neon); display:block; margin-bottom:14px;">What's On</span>
     <h2>Events &amp; <em>Happenings</em></h2>
   </div>
   <div class="events-grid">
@@ -712,7 +718,7 @@
       <div class="ev-scrim"></div>
       <div class="ev-border"></div>
       <div class="ev-content">
-        <span class="ev-tag">Every Sunday</span>
+        <span class="ev-tag" style="color: var(--green-neon);">Every Sunday</span>
         <h3 class="ev-title">Sunday <em>Brunch</em></h3>
         <p class="ev-detail">9am — 2pm &nbsp;·&nbsp; Buffet Style &nbsp;·&nbsp; All Are Welcome</p>
       </div>
