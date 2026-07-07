@@ -184,6 +184,65 @@
       50%      { opacity: 1;  transform: scaleY(1.2) translateY(6px); }
     }
 
+    /* ── REVIEWS ── */
+    .reviews {
+      padding: 80px 52px;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+    .reviews-hd {
+      max-width: 1380px; margin: 0 auto 56px;
+      display: flex; flex-direction: column; align-items: center; gap: 14px;
+      text-align: center;
+    }
+    .reviews-hd h2 {
+      font-size: clamp(28px, 3vw, 48px); font-weight: 400; letter-spacing: -.022em;
+    }
+    .reviews-hd h2 em { color: var(--pink); font-style: italic; }
+    .reviews-rating {
+      display: flex; align-items: center; gap: 14px;
+    }
+    .reviews-score {
+      font-family: 'Playfair Display', serif;
+      font-size: 52px; font-weight: 700; color: var(--gold);
+      line-height: 1; text-shadow: 0 0 32px var(--gold-glow);
+    }
+    .reviews-stars-sub { display: flex; flex-direction: column; gap: 4px; align-items: flex-start; }
+    .stars { color: var(--gold); font-size: 18px; letter-spacing: 2px; }
+    .stars.sm { font-size: 14px; letter-spacing: 1px; }
+    .reviews-source {
+      font-family: 'Lato', sans-serif; font-size: 12px;
+      letter-spacing: .15em; text-transform: uppercase; color: var(--text-muted);
+    }
+    .reviews-grid {
+      max-width: 1380px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+    }
+    .rev-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 36px 32px;
+      display: flex; flex-direction: column; gap: 16px;
+      transition: border-color .2s ease, background .2s ease;
+      position: relative;
+    }
+    .rev-card:hover { border-color: var(--border-gold); background: var(--gold-dim); }
+    .rev-quote {
+      font-family: 'Playfair Display', serif; font-style: italic;
+      font-size: 16px; line-height: 1.72; color: var(--text);
+      flex-grow: 1;
+    }
+    .rev-quote::before { content: '\201C'; color: var(--pink); font-size: 28px; line-height: 0; vertical-align: -10px; margin-right: 4px; }
+    .rev-footer { display: flex; flex-direction: column; gap: 4px; margin-top: 8px; border-top: 1px solid var(--border); padding-top: 18px; }
+    .rev-name {
+      font-family: 'Lato', sans-serif; font-size: 14px;
+      font-weight: 700; letter-spacing: .04em; color: var(--text);
+    }
+    .rev-meta {
+      font-family: 'Lato', sans-serif; font-size: 12px;
+      color: var(--text-muted); letter-spacing: .05em;
+    }
+
     /* ── FEATURES ── */
     .features {
       background: var(--bg-raised);
@@ -569,6 +628,8 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 1100px) {
       .features-grid { grid-template-columns: repeat(2,1fr); }
+      .reviews-grid { grid-template-columns: 1fr 1fr; }
+      .reviews { padding: 60px 24px; }
       .about-grid, .bar-grid { grid-template-columns: 1fr; gap: 48px; }
       .about-grid p { max-width: none; }
       .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 280px 280px 280px; }
@@ -586,6 +647,7 @@
       .int-card--tall { grid-row: span 1; }
       footer { padding: 56px 24px 32px; }
       .features { padding: 44px 24px; }
+      .reviews-grid { grid-template-columns: 1fr; }
       .full-bleed-txt { left: 28px; bottom: 36px; }
       .res-meta { flex-direction: column; gap: 16px; }
       .gallery-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
@@ -640,6 +702,78 @@
 
 <!-- COLOR STRIP -->
 <div class="strip"></div>
+
+<!-- REVIEWS -->
+<section class="reviews">
+  <div class="reviews-hd">
+    <span class="lbl" style="color: var(--gold)">Google Reviews</span>
+    <h2>What Our Guests Are <em>Saying</em></h2>
+    <div class="reviews-rating">
+      <div class="reviews-score">4.2</div>
+      <div class="reviews-stars-sub">
+        <span class="stars">★★★★☆</span>
+        <span class="reviews-source">Based on Google Reviews</span>
+      </div>
+    </div>
+  </div>
+  <div class="reviews-grid">
+
+    <div class="rev-card">
+      <span class="stars sm">★★★★★</span>
+      <p class="rev-quote">I am so happy to have found this gem in Beaumont. The best shrimp ceviche with super tasty spicy green chili salsa. Chile verde plate was delicious, and the chile relleno? Wow. Chips and salsa are fresh.</p>
+      <div class="rev-footer">
+        <span class="rev-name">Joe Gonzalez</span>
+        <span class="rev-meta">Local Guide · 8 months ago</span>
+      </div>
+    </div>
+
+    <div class="rev-card">
+      <span class="stars sm">★★★★★</span>
+      <p class="rev-quote">Best menudo and chilaquiles we have had in a long time — reminded us of home in Mama's cocina. The flavors were made with pride. The service was 5-star, first class. We will be back.</p>
+      <div class="rev-footer">
+        <span class="rev-name">Albert Martinez</span>
+        <span class="rev-meta">Local Guide · 5 months ago</span>
+      </div>
+    </div>
+
+    <div class="rev-card">
+      <span class="stars sm">★★★★★</span>
+      <p class="rev-quote">Some of the best chicken nachos and shrimp quesadillas, and their Diablo burrito is not for the faint of heart. The salsas are made fresh by the owner herself. A solid 10/10 and an absolute must-try!</p>
+      <div class="rev-footer">
+        <span class="rev-name">Nelly Alcocer</span>
+        <span class="rev-meta">5 months ago</span>
+      </div>
+    </div>
+
+    <div class="rev-card">
+      <span class="stars sm">★★★★☆</span>
+      <p class="rev-quote">The food is just as tasty as I remember. Beaumont and Banning locals love to visit for good eats and a baseball game. The signature beans at this restaurant are delicious!</p>
+      <div class="rev-footer">
+        <span class="rev-name">Lorenzo Warfel</span>
+        <span class="rev-meta">Local Guide · 2 months ago</span>
+      </div>
+    </div>
+
+    <div class="rev-card">
+      <span class="stars sm">★★★★☆</span>
+      <p class="rev-quote">The micheladas were a 10/10 — very well made and flavorful. All the employees were very friendly and attentive. Because of that, I would definitely come back and give it another chance.</p>
+      <div class="rev-footer">
+        <span class="rev-name">Gloria</span>
+        <span class="rev-meta">Local Guide · 3 months ago</span>
+      </div>
+    </div>
+
+    <div class="rev-card">
+      <span class="stars sm">★★★★★</span>
+      <p class="rev-quote">Finally found the perfect deep fried ice cream here. The chef came out himself to explain his process — it was the kindest thing! I'd make the 30-minute drive just for the ice cream anytime.</p>
+      <div class="rev-footer">
+        <span class="rev-name">Danielle</span>
+        <span class="rev-meta">9 months ago</span>
+      </div>
+    </div>
+
+  </div>
+</section>
 
 <!-- FEATURES -->
 <section class="features">
