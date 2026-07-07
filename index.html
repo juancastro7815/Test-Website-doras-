@@ -67,10 +67,19 @@
       backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border-pink);
     }
-    .nav-logo img {
-      height: 58px; width: auto; display: block;
-      background: #fff; border-radius: 6px; padding: 4px 10px;
+    .nav-logo {
+      display: flex; align-items: center; gap: 14px; text-decoration: none;
     }
+    .nav-logo img {
+      height: 52px; width: auto; display: block;
+      background: #fff; border-radius: 6px; padding: 4px 8px;
+    }
+    .nav-logo-text {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 22px; font-weight: 400; letter-spacing: -.01em;
+      color: var(--text); line-height: 1;
+    }
+    .nav-logo-text em { color: var(--pink); font-style: italic; text-shadow: 0 0 20px var(--pink-glow); }
     .nav-links { display: flex; gap: 40px; list-style: none; }
     .nav-links a {
       text-decoration: none; color: var(--text);
@@ -532,9 +541,10 @@
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">
+  <a href="#" class="nav-logo">
     <img src="IMG_56C2730E-443F-444E-93B6-D4A657C133EF.jpeg" alt="Dora's Mexican Grill & Cantina">
-  </div>
+    <span class="nav-logo-text">Dora<em>'s</em></span>
+  </a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#gallery">Food</a></li>
